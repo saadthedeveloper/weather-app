@@ -1,5 +1,5 @@
 let base_Url = "https://api.openweathermap.org/data/2.5/weather?q=";
-let APIKeyWeather = "";
+let APIKeyWeather = "35dd47446cb0e4d5eb601989c945ed63";
 
 let userInputCityName = document.querySelector("#search-div input");
 let searchButton = document.querySelector("#search-div button");
@@ -8,6 +8,17 @@ let tempratureElement = document.querySelector("#Temprature");
 let cityNameDisplayed = document.querySelector("#city-name")
 let windSpeedDisplayed = document.querySelector("#wind-speed");
 let humidityPercentageDisplayed = document.querySelector("#humidity-percentage");
+let body = document.querySelector("body");
+
+
+
+body.addEventListener("keydown", (evt) => {
+    if(evt.key === "Enter")
+    {
+        searchButton.click();
+    }
+});
+
 
 searchButton.addEventListener("click", async () => {
     let URL = `${base_Url}${userInputCityName.value}&appid=${APIKeyWeather}`;
@@ -16,6 +27,12 @@ searchButton.addEventListener("click", async () => {
 
     let data = await dataJSON.json();
 
+    displayWeatherData(data);
+
+
+});
+
+const displayWeatherData = (data) => {
     if (data.cod === 200) {
         let temprature = Math.floor((data.main.temp) - 273.5); //Temprature In Celsius
         let country = data.sys.country;
@@ -53,14 +70,21 @@ searchButton.addEventListener("click", async () => {
         else if (weatherDescription.includes("rain")) {
             weatherIcon.setAttribute('src', 'Images/drizzle.png');
 
+        }else if (weatherDescription.includes("snow")) {
+            weatherIcon.setAttribute('src', 'Images/snowy.png');
+
         }
     }
     else {
         console.log("city not found")
     }
 
-
-
+}
+window.addEventListener("DOMContentLoaded", async() => {
+    let URL = `${base_Url}${userInputCityName.value}&appid=${APIKeyWeather}`;
+    let dataJSON = await fetch(URL);
+    let data = await dataJSON.json();
+    displayWeatherData(data);
 });
 
 //overcast cloud
