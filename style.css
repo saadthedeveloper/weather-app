@@ -113,7 +113,7 @@ body {
 
 }
 
-#city-name{
+#city-name {
     position: relative;
     color: white;
     font-size: 90px;
@@ -122,58 +122,68 @@ body {
 }
 
 @media screen and (max-width: 565px) {
-  #main-container {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    border-radius: 0;
-}
+    body {
+        background-color: #527afa;
+    }
 
-#city-name{
-    font-size: 50px;
-    top: -200px;
-}
+    #main-container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
 
-#Temprature{
-    font-size: 80px;
-}
+    #city-name {
+        position: static;
+        font-size: 70px;
+        top: -200px;
+    }
 
-#weather-icon {
-    width: 300px;
-}
+    #Temprature {
+        position: static;
+        font-size: 75px;
+    }
 
-#humidity-percentage {
-    font-size: 25px;
-}
+    #weather-icon {
+        width: 280px;
+    }
 
-#wind-speed {
-    font-size: 25px;
-}
+    #humidity-percentage {
+        font-size: 25px;
+    }
 
-.detail-columns img {
-    width: 50px;
-}
+    #wind-speed {
+        font-size: 25px;
+    }
 
-.detail-columns:first-of-type img {
-    width: 50px;
-}
+    .detail-columns img {
+        width: 50px;
+    }
 
-#search-div input {
-    width: 100%;
-    height: 60px;
-}
+    .detail-columns:first-of-type img {
+        width: 50px;
+    }
 
-#search-div button img {
-    width: 20px;
+    #search-div input {
+        width: 100%;
+        height: 60px;
+    }
 
-}
+    #search-div button img {
+        width: 20px;
 
-#search-div button {
-    width: 80px;
-    height: 60px;
-}
+    }
 
-#search-div {
-    width: 100%;
-}
+    #search-div button {
+        width: 80px;
+        height: 60px;
+    }
+
+    #search-div {
+        width: 100%;
+    }
+
+    #details-div {
+        margin-top: 20px;
+    }
 }

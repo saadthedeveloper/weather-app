@@ -13,8 +13,7 @@ let body = document.querySelector("body");
 
 
 body.addEventListener("keydown", (evt) => {
-    if(evt.key === "Enter")
-    {
+    if (evt.key === "Enter") {
         searchButton.click();
     }
 });
@@ -44,7 +43,7 @@ const displayWeatherData = (data) => {
 
 
         tempratureElement.innerText = `${temprature}°C`;
-        cityNameDisplayed.innerText = userInputCityName.value;
+        cityNameDisplayed.innerText = userInputCityName.value.charAt(0).toUpperCase() + userInputCityName.value.slice(1);
         windSpeedDisplayed.innerText = `${windSpeed}km/h`;
         humidityPercentageDisplayed.innerText = `${humidity}%`;
 
@@ -54,7 +53,7 @@ const displayWeatherData = (data) => {
         else if (cityNameDisplayed.innerText.length >= 9 && window.innerWidth > 565) {
             cityNameDisplayed.style.fontSize = "70px";
         }
-        else if (cityNameDisplayed.innerText.length < 8 && window.innerWidth > 565){
+        else if (cityNameDisplayed.innerText.length < 8 && window.innerWidth > 565) {
             cityNameDisplayed.style.fontSize = "90px";
         }
 
@@ -70,7 +69,7 @@ const displayWeatherData = (data) => {
         else if (weatherDescription.includes("rain")) {
             weatherIcon.setAttribute('src', 'Images/drizzle.png');
 
-        }else if (weatherDescription.includes("snow")) {
+        } else if (weatherDescription.includes("snow")) {
             weatherIcon.setAttribute('src', 'Images/snowy.png');
 
         }
@@ -80,7 +79,7 @@ const displayWeatherData = (data) => {
     }
 
 }
-window.addEventListener("DOMContentLoaded", async() => {
+window.addEventListener("DOMContentLoaded", async () => {
     let URL = `${base_Url}${userInputCityName.value}&appid=${APIKeyWeather}`;
     let dataJSON = await fetch(URL);
     let data = await dataJSON.json();
