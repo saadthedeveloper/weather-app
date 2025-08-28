@@ -31,13 +31,13 @@ searchButton.addEventListener("click", async () => {
         windSpeedDisplayed.innerText = `${windSpeed}km/h`;
         humidityPercentageDisplayed.innerText = `${humidity}%`;
 
-        if (cityNameDisplayed.innerText.length === 8) {
+        if (cityNameDisplayed.innerText.length === 8 && window.innerWidth > 565) {
             cityNameDisplayed.style.fontSize = "84px";
         }
-        else if (cityNameDisplayed.innerText.length >= 9) {
-            cityNameDisplayed.style.fontSize = "74px";
+        else if (cityNameDisplayed.innerText.length >= 9 && window.innerWidth > 565) {
+            cityNameDisplayed.style.fontSize = "70px";
         }
-        else {
+        else if (cityNameDisplayed.innerText.length < 8 && window.innerWidth > 565){
             cityNameDisplayed.style.fontSize = "90px";
         }
 
@@ -48,6 +48,10 @@ searchButton.addEventListener("click", async () => {
         }
         else if (weatherDescription.includes("clear")) {
             weatherIcon.setAttribute('src', 'Images/sun.png');
+
+        }
+        else if (weatherDescription.includes("rain")) {
+            weatherIcon.setAttribute('src', 'Images/drizzle.png');
 
         }
     }
