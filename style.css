@@ -163,11 +163,11 @@ body {
     }
 
     .detail-columns img {
-        width: 80px;
+        width: 60px;
     }
 
     .detail-columns:first-of-type img {
-        width: 80px;
+        width: 60px;
     }
 
     #search-div input {
@@ -195,8 +195,6 @@ body {
         position: sticky;
         width: 100%;
         justify-content: space-around;
-        margin-top: -15px;
-
-
+        margin-top: 15px;
     }
 }
