@@ -44,7 +44,7 @@ A simple weather web app built with **HTML, CSS, and JavaScript** that lets user
 ## ⚙️ Setup & Usage
 1. Clone this repository:
    ```bash
-   - git clone https://github.com/your-username/weather-app.git
+   - git clone https://github.com/saadthedeveloper/weather-app.git
 - Open the project folder in VS Code (or any editor).
 - Open index.html in your browser.
 - Enter a city name in the search bar to view its current weather.
